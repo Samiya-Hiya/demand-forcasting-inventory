@@ -1,0 +1,110 @@
+
+<style>
+  h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif}
+  .dash{background:#1a1f2e;min-height:620px;padding:14px;color:#fff}
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .topbar h1{font-size:15px;font-weight:600;color:#e8eaf0;letter-spacing:.3px}
+  .topbar .subtitle{font-size:11px;color:#6b7a99;margin-top:2px}
+  .badge{background:#0078d4;color:#fff;font-size:10px;padding:3px 9px;border-radius:3px;font-weight:600}
+  .kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px}
+  .kpi{background:#242b3d;border-radius:6px;padding:12px 14px;border-top:3px solid}
+  .kpi.blue{border-color:#0078d4}.kpi.green{border-color:#107c10}.kpi.amber{border-color:#ff8c00}.kpi.teal{border-color:#008272}.kpi.red{border-color:#d13438}
+  .kpi .label{font-size:10px;color:#8892aa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .kpi .value{font-size:22px;font-weight:700;color:#fff}
+  .kpi .delta{font-size:10px;margin-top:4px}
+  .delta.up{color:#54b054}.delta.down{color:#e05a5a}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+  .grid3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
+  .panel{background:#242b3d;border-radius:6px;padding:12px}
+  .panel-title{font-size:11px;font-weight:600;color:#a0aec0;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #2d3650}
+  canvas{display:block}
+  .bar-horiz{display:flex;flex-direction:column;gap:7px}
+  .bar-row{display:flex;align-items:center;gap:8px;font-size:11px}
+  .bar-label{width:80px;color:#a0aec0;text-align:right;flex-shrink:0;font-size:10px}
+  .bar-track{flex:1;background:#1a1f2e;border-radius:3px;height:18px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:10px;font-weight:600;color:#fff}
+  .donut-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .legend-dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+  .leg-row{display:flex;align-items:center;font-size:10px;color:#a0aec0;margin-bottom:3px}
+  .leg-val{margin-left:auto;font-weight:600;color:#e8eaf0}
+</style>
+<h2 class="sr-only">Project 1 Power BI–style dashboard: Demand Forecasting and Inventory Optimization KPIs for 5 industrial SKUs across 3 warehouse hubs, 2021–2023.</h2>
+<div class="dash">
+  <div class="topbar">
+    <div>
+      <div style="font-size:11px;color:#6b7a99;margin-bottom:2px">Supply Chain Analytics · Project 1</div>
+      <h1 style="font-size:16px;color:#e8eaf0">Demand Forecasting & Inventory Optimization</h1>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span style="font-size:10px;color:#6b7a99">Period: Jan 2021 – Dec 2023</span>
+      <span class="badge">POWER BI</span>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi blue"><div class="label">Total Revenue</div><div class="value">€1.34M</div><div class="delta up">▲ +15% YoY</div></div>
+    <div class="kpi green"><div class="label">Fill Rate</div><div class="value">97.4%</div><div class="delta up">▲ +2.1pp</div></div>
+    <div class="kpi amber"><div class="label">Avg Inventory</div><div class="value">133 u</div><div class="delta down">▼ –8 units</div></div>
+    <div class="kpi teal"><div class="label">Supplier OTD</div><div class="value">60.0%</div><div class="delta down">▼ Below target</div></div>
+    <div class="kpi red"><div class="label">Stockout Events</div><div class="value">142</div><div class="delta down">▼ Action needed</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <div class="panel-title">Monthly Demand Trend (all SKUs)</div>
+      <div style="position:relative;height:180px"><canvas id="c1" role="img" aria-label="Monthly demand trend 2022–2023 showing seasonal Q4 peaks">Monthly demand rises in Q4 each year.</canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">SKU Revenue Breakdown</div>
+      <div class="bar-horiz" style="margin-top:4px">
+        <div class="bar-row"><div class="bar-label">SKU-002</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#0078d4">€406K</div></div></div>
+        <div class="bar-row"><div class="bar-label">SKU-003</div><div class="bar-track"><div class="bar-fill" style="width:81%;background:#005fa3">€329K</div></div></div>
+        <div class="bar-row"><div class="bar-label">SKU-005</div><div class="bar-track"><div class="bar-fill" style="width:64%;background:#0078d4">€262K</div></div></div>
+        <div class="bar-row"><div class="bar-label">SKU-001</div><div class="bar-track"><div class="bar-fill" style="width:53%;background:#005fa3">€217K</div></div></div>
+        <div class="bar-row"><div class="bar-label">SKU-004</div><div class="bar-track"><div class="bar-fill" style="width:31%;background:#003966">€126K</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="panel">
+      <div class="panel-title">Inventory Policy — EOQ vs Safety Stock</div>
+      <div style="position:relative;height:140px"><canvas id="c2" role="img" aria-label="EOQ and safety stock by SKU bar chart">Grouped bars showing EOQ and safety stock per SKU.</canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Supplier OTD Performance</div>
+      <div class="bar-horiz" style="margin-top:4px">
+        <div class="bar-row"><div class="bar-label" style="width:72px">A-DE</div><div class="bar-track"><div class="bar-fill" style="width:91%;background:#107c10">91%</div></div></div>
+        <div class="bar-row"><div class="bar-label" style="width:72px">D-CZ</div><div class="bar-track"><div class="bar-fill" style="width:88%;background:#107c10">88%</div></div></div>
+        <div class="bar-row"><div class="bar-label" style="width:72px">C-PL</div><div class="bar-track"><div class="bar-fill" style="width:85%;background:#ff8c00">85%</div></div></div>
+        <div class="bar-row"><div class="bar-label" style="width:72px">B-CN</div><div class="bar-track"><div class="bar-fill" style="width:60%;background:#d13438">60%</div></div></div>
+      </div>
+      <div style="font-size:9px;color:#6b7a99;margin-top:8px;padding-top:6px;border-top:1px solid #2d3650">Target: 85% · SupplierB-CN critical risk</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">ABC Classification</div>
+      <div class="donut-wrap" style="margin-top:4px">
+        <div style="position:relative;height:100px;width:100px"><canvas id="c3" role="img" aria-label="ABC classification donut: A=2 SKUs, B=2, C=1">2 Class A, 2 Class B, 1 Class C SKU.</canvas></div>
+        <div style="width:100%">
+          <div class="leg-row"><span class="legend-dot" style="background:#0078d4"></span>Class A — High<span class="leg-val">2 SKUs</span></div>
+          <div class="leg-row"><span class="legend-dot" style="background:#ff8c00"></span>Class B — Med<span class="leg-val">2 SKUs</span></div>
+          <div class="leg-row"><span class="legend-dot" style="background:#d13438"></span>Class C — Low<span class="leg-val">1 SKU</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const dark='#1a1f2e',gridC='rgba(255,255,255,0.06)',tickC='#6b7a99';
+const defOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1f2e',borderColor:'#2d3650',borderWidth:1}},scales:{x:{ticks:{color:tickC,font:{size:9}},grid:{color:gridC}},y:{ticks:{color:tickC,font:{size:9}},grid:{color:gridC}}}};
+
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:['Jul-22','Aug-22','Sep-22','Oct-22','Nov-22','Dec-22','Jan-23','Feb-23','Mar-23','Apr-23','May-23','Jun-23','Jul-23','Aug-23','Sep-23','Oct-23','Nov-23','Dec-23'],datasets:[{label:'Demand',data:[380,367,405,415,558,577,353,333,428,420,440,433,388,390,426,452,580,604],borderColor:'#0078d4',backgroundColor:'rgba(0,120,212,0.15)',fill:true,tension:0.4,pointRadius:2,borderWidth:2}]},options:{...defOpts,scales:{x:{ticks:{color:tickC,font:{size:8},maxRotation:45},grid:{color:gridC}},y:{ticks:{color:tickC,font:{size:9}},grid:{color:gridC}}}}});
+
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['SKU-001','SKU-002','SKU-003','SKU-004','SKU-005'],datasets:[{label:'EOQ',data:[148,52,36,89,63],backgroundColor:'#0078d4',borderRadius:2},{label:'Safety Stock',data:[22,19,31,11,18],backgroundColor:'#ff8c00',borderRadius:2}]},options:{...defOpts,plugins:{legend:{display:true,labels:{color:'#a0aec0',font:{size:9},boxWidth:10}}}}});
+
+new Chart(document.getElementById('c3'),{type:'doughnut',data:{labels:['A','B','C'],datasets:[{data:[2,2,1],backgroundColor:['#0078d4','#ff8c00','#d13438'],borderWidth:0,hoverOffset:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}});
+</script>
